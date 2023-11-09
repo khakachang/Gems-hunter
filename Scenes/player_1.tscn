@@ -1,0 +1,89 @@
+[gd_scene load_steps=18 format=3 uid="uid://fndr73lo5mrs"]
+
+[ext_resource type="Script" path="res://Scripts/Player1.gd" id="1_hevaa"]
+[ext_resource type="Texture2D" uid="uid://da0qpc6e1nvdg" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/idle_0.png" id="2_t4ixg"]
+[ext_resource type="Texture2D" uid="uid://dvqxje7tapok" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/idle_1.png" id="3_8j75p"]
+[ext_resource type="Texture2D" uid="uid://b7ftapwurpuys" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/idle_2.png" id="4_v548s"]
+[ext_resource type="Texture2D" uid="uid://rrhp10ty03cn" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/idle_3.png" id="5_bl8uw"]
+[ext_resource type="Texture2D" uid="uid://x3j7e71ud2yd" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/idle_4.png" id="6_s4y45"]
+[ext_resource type="Texture2D" uid="uid://bkxlb8bb7qs4l" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/idle_5.png" id="7_71rig"]
+[ext_resource type="Texture2D" uid="uid://mc774hpqfni4" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/walk_0.png" id="8_b6len"]
+[ext_resource type="Texture2D" uid="uid://30e2igdlemt6" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/walk_1.png" id="9_a8jy1"]
+[ext_resource type="Texture2D" uid="uid://d1fjkgk0kluty" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/walk_2.png" id="10_fh5o2"]
+[ext_resource type="Texture2D" uid="uid://u0sxhy4opj7n" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/walk_3.png" id="11_7vesp"]
+[ext_resource type="Texture2D" uid="uid://cwsce7v82i8ly" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/walk_4.png" id="12_vuumg"]
+[ext_resource type="Texture2D" uid="uid://brx5nvo4jgtq6" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/walk_5.png" id="13_i11yv"]
+[ext_resource type="Texture2D" uid="uid://sto18pkf7qro" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/walk_6.png" id="14_ml8cv"]
+[ext_resource type="Texture2D" uid="uid://f5ok3akakk77" path="res://Free 2D Animated Vector Game Character Sprites/Full body animated characters/Char 1/no hands/walk_7.png" id="15_27q3g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdc57"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t4ixg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8j75p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v548s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bl8uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s4y45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_71rig")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_b6len")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a8jy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fh5o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7vesp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vuumg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i11yv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ml8cv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_27q3g")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glln3"]
+radius = 18.0
+height = 58.0
+
+[node name="Player1" type="Area2D"]
+script = ExtResource("1_hevaa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.08, 0.08)
+sprite_frames = SubResource("SpriteFrames_cdc57")
+animation = &"Idle"
+frame_progress = 0.897669
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 28)
+shape = SubResource("CapsuleShape2D_glln3")

@@ -1,0 +1,147 @@
+[gd_scene load_steps=23 format=3 uid="uid://cp3aga6kpjdva"]
+
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_e5hmu"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://joystick/virtual_joystick.tscn" id="1_fab74"]
+[ext_resource type="Texture2D" uid="uid://dbhynuj1nxrw8" path="res://Free 2D Animated Vector Game Character Sprites/Environment/ground_white.png" id="1_o0o1b"]
+[ext_resource type="PackedScene" uid="uid://fndr73lo5mrs" path="res://Scenes/player_1.tscn" id="2_efwgi"]
+[ext_resource type="Texture2D" uid="uid://b30xdtty7kir8" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/idle_0.png" id="5_tdwix"]
+[ext_resource type="Texture2D" uid="uid://dopfc2x5uk68p" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/idle_1.png" id="6_836ew"]
+[ext_resource type="Texture2D" uid="uid://brmqvpt5bmhgt" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/idle_2.png" id="7_2j62d"]
+[ext_resource type="Texture2D" uid="uid://c4p5sy2qf3jc8" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/idle_3.png" id="8_1tnid"]
+[ext_resource type="Texture2D" uid="uid://buok7ehsi3lau" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/idle_4.png" id="9_rqu6q"]
+[ext_resource type="Texture2D" uid="uid://dkbad3byqhqlw" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/walk_0.png" id="10_60oxf"]
+[ext_resource type="Texture2D" uid="uid://drqb4013taf2p" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/idle_5.png" id="10_yrpxm"]
+[ext_resource type="Texture2D" uid="uid://dtdeevkpsnclq" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/walk_1.png" id="11_3ki5b"]
+[ext_resource type="Texture2D" uid="uid://dr18yhdcmccq3" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/walk_2.png" id="12_adxyn"]
+[ext_resource type="Texture2D" uid="uid://bm8xnd1b728in" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/walk_3.png" id="13_oiynq"]
+[ext_resource type="Texture2D" uid="uid://djpdhdu4p06of" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/walk_4.png" id="14_b4kcr"]
+[ext_resource type="Texture2D" uid="uid://b8numnm42ucfc" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/walk_5.png" id="15_h607u"]
+[ext_resource type="Texture2D" uid="uid://mr0c6xyehikg" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/walk_6.png" id="16_8p6rb"]
+[ext_resource type="Texture2D" uid="uid://c5yqyith4lvag" path="res://Free 2D Animated Vector Game Character Sprites/Animated body parts/Right weapons/weaponR2/walk_7.png" id="17_1ymfk"]
+[ext_resource type="Texture2D" uid="uid://cs35so4tp3r6b" path="res://Free 2D Animated Vector Game Character Sprites/Environment/rock1.png" id="19_extf6"]
+[ext_resource type="Texture2D" uid="uid://b48sd8f4gl14p" path="res://Free 2D Animated Vector Game Character Sprites/Environment/rock2.png" id="20_n5oco"]
+[ext_resource type="Texture2D" uid="uid://lhm2dqcort0o" path="res://Free 2D Animated Vector Game Character Sprites/Environment/rock3.png" id="21_r1x1v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxrbs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tdwix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_836ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2j62d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1tnid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rqu6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yrpxm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_60oxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3ki5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_adxyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_oiynq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b4kcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_h607u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8p6rb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_1ymfk")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_e5hmu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.54902, 0.54902, 0.54902, 1)
+position = Vector2(560, 228)
+texture = ExtResource("1_o0o1b")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="move" parent="UI" instance=ExtResource("1_fab74")]
+offset_top = -300.0
+offset_bottom = 0.0
+action_left = "move_left"
+action_right = "move_right"
+action_up = "move_up"
+action_down = "move_down"
+
+[node name="firing" parent="UI" instance=ExtResource("1_fab74")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+action_left = "look_left"
+action_right = "look_right"
+action_up = "look_up"
+action_down = "look_down"
+
+[node name="Player1" parent="." node_paths=PackedStringArray("joystick_left", "joystick_right") instance=ExtResource("2_efwgi")]
+position = Vector2(581, 315)
+joystick_left = NodePath("../UI/move")
+joystick_right = NodePath("../UI/firing")
+
+[node name="Camera2D" type="Camera2D" parent="Player1"]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Player1"]
+
+[node name="gun" type="AnimatedSprite2D" parent="Player1"]
+self_modulate = Color(0.435294, 0.435294, 0.435294, 1)
+position = Vector2(0.999951, 41)
+scale = Vector2(0.07, 0.06)
+sprite_frames = SubResource("SpriteFrames_mxrbs")
+animation = &"idle"
+offset = Vector2(236.194, -574.803)
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(393, 262)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("19_extf6")
+
+[node name="rock2" type="Sprite2D" parent="."]
+position = Vector2(731, 580)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("20_n5oco")
+
+[node name="rock3" type="Sprite2D" parent="."]
+position = Vector2(131, 715)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("21_r1x1v")
+
+[node name="rock1_1" type="Sprite2D" parent="."]
+position = Vector2(997, 25)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("19_extf6")
