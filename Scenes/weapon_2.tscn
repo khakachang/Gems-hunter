@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgfh7j10vi7fx"]
-
-[ext_resource type="Texture2D" uid="uid://cc6px8e0o2ci2" path="res://Free 2D Animated Vector Game Character Sprites/Weapons/weaponR2.png" id="1_to0ju"]
-
-[node name="weapon2" type="Sprite2D"]
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("1_to0ju")
